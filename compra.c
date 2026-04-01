@@ -6,7 +6,7 @@ int main () {
     printf ("Digite o valor para consultar o desconto:\n");
     scanf ("%f", &valor);
 
-    if (valor >= 100.00) {
+    if (valor > 100.00) {
         printf ("Recebe Desconto");
     }
 
