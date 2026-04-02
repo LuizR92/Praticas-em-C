@@ -6,17 +6,13 @@ int main()
     printf("Digite um numero inteiro:\n");
     scanf("%d", &num);
 
-    if (num > 0)
+    if (num % 2 == 0)
     {
-        printf("Positivo!\n");
-    }
-    else if (num < 0)
-    {
-        printf("Negativo!\n");
+        printf("Par!\n");
     }
     else
     {
-        printf("Zero!\n");
+        printf("Impar!\n");
     }
     return 0;
 }
