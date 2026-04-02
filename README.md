@@ -1,4 +1,4 @@
-# Praticas-em-C
+# Praticas em C
 Exercícios feitos durante a aula!
 
 ESTUDANDO BIBLIOTECAS DE CÓDIGO.
