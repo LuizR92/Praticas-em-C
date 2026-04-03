@@ -1,5 +1,5 @@
 # Praticas em C
-Exercícios feitos durante a aula!
+Questões que foram passadas na aula de "introdução em programação em c"
 
 ESTUDANDO BIBLIOTECAS DE CÓDIGO.
 https://petbcc.ufscar.br/ctype/
