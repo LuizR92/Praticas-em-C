@@ -25,35 +25,35 @@ Compra     Consegue empréstimo?
 */
 
 #include <stdio.h>
-int main() {
-
+int main (){
     char dinheiro;
     char emprestimo;
-
-    printf("Tem dinheiro? (s/n): ");
+    
+    printf("Você tem dinheiro? (S = SIM / N = Não): ");
     scanf(" %c", &dinheiro);
-
-    if (dinheiro == 's' || dinheiro == 'S')
-    {
-        printf("Pode comprar!\n");
-    }
-
-    else{
+    
+    if (dinheiro == 'S' || dinheiro == 's') {
+        printf("Pode Comprar!\n");
+        }
         
-        printf("Consegue emprestimo? (s/n): ");
+    else {
+        printf("\nConsegue Emprestimo? (S == SIM / N == Não): ");
         scanf(" %c", &emprestimo);
-
-        if (emprestimo == 's' || emprestimo == 'S')
-        {
-            printf("Pode comprar!\n");
+        
+        if (emprestimo == 'S' || emprestimo == 's') {
+            printf("Pode Comprar!\n");
         }
-        else 
-        {
-            printf("Nao compra.\n");
+        
+        else {
+            printf("Não pode comprar!\n");
         }
+        
+        
     }
+    
     return 0;
-    }
+        
+}
 
 
 
