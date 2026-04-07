@@ -1,22 +1,21 @@
 #include <stdio.h>
-int main()
-{
+int main () {
     float nota;
-
-    printf("Digite uma nota (0 a 10):\n");
-    scanf("%f", &nota);
-
-    if (nota >= 7 && nota <= 10)
-    {
+    
+    printf("Digite uma nota (0 a 10): ");
+    scanf ("%f", &nota);
+    
+    if(nota < 0 || nota > 10) {
+        printf("Nota Invalida!\n");
+    }
+    
+    else if(nota >= 7) {
         printf("Aprovado!\n");
     }
-    else if (nota >= 0 && nota < 7)
-    {
-        printf("Reprovado!\n");
+    
+    else {
+        printf("Reprovado\n");
     }
-    else
-    {
-        printf("Nota invalida!\n");
-    }
-    return 0;
+    
+return 0;
 }
