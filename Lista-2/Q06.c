@@ -28,20 +28,20 @@ int main()
     float nota;
     float freq;
 
-    printf("Digite uma nota:\n");
-    scanf("%f", &nota);
+    printf("Digite uma nota e a frequência do aluno em %%: ");
+    scanf("%f %f", &nota, &freq);
 
-    printf("Digite a frequencia do aluno em %%:\n");
-    scanf("%f", &freq);
-
-    if (nota >= 7 && freq >= 75)
+    if (nota < 7)
     {
-        printf("Aluno aprovado!\n");
+        printf("Reprovado por nota!\n");
     }
-
+    else if (freq < 75)
+    {
+        printf("Reprovado por frequencia!\n");
+    }
     else
     {
-        printf("Aluno reprovado!\n");
+        printf("Aluno aprovado!\n");
     }
 
     return 0;
