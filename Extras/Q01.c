@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int main()
 {
@@ -10,7 +11,7 @@ int main()
     printf("Digite a frequencia do aluno em (%%): ");
     scanf("%f", &freq);
 
-    if (nota <= 7)
+    if (nota < 7)
     {
         printf("Reprovado por nota!\n");
     }
