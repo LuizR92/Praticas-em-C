@@ -4,10 +4,10 @@ int main()
     float nota;
     float freq;
 
-    printf("Digite a nota do aluno: ");
+    printf("Digite a nota do aluno (0-7): ");
     scanf("%f", &nota);
 
-    printf("Digite a frequencia do aluno em %%: ");
+    printf("Digite a frequencia do aluno em (%%): ");
     scanf("%f", &freq);
 
     if (nota <= 7)
