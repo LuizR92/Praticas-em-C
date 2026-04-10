@@ -3,11 +3,13 @@ int main()
 {
     float idade;
     char autorizacao;
+    
+    printf("Para entrar, precisa-se de dois requesistos: (Idade 18+ e Autorizacao)\n");
 
-    printf("Digite sua idade: ");
+    printf("\nDigite sua idade: ");
     scanf("%f", &idade);
 
-    printf("Voce tem autorizacao? (S = Sim / N = Nao) ");
+    printf("\nVoce tem autorizacao? (S = Sim / N = Nao) ");
     scanf(" %c", &autorizacao);
 
     if (idade >= 18 && (autorizacao == 's' || autorizacao == 'S'))
