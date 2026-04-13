@@ -2,41 +2,54 @@
 
 int main() {
     char tipo;
-    float kWh;
-    float preco;
-    float total;
+    float consumo, preco, total;
 
-    printf("Para calcular o custo pelo fornecimento de energia, primeiramente digite o tipo de instalacao: (R= Residencial / C= Comercial / I = Industrial) = ");
+    // Entrada de dados
+    printf("Digite o tipo da instalacao (R, C ou I): ");
     scanf(" %c", &tipo);
 
-    printf("\nAgora digite o consumo em kWh: ");
-    scanf("%f", &kWh);
+    printf("Digite o consumo em kWh: ");
+    scanf("%f", &consumo);
 
+    // Verifica o tipo de instalacao
     if (tipo == 'R' || tipo == 'r') {
-        if (kWh <= 500) {
+
+        // Regra para residencial
+        if (consumo <= 500) {
             preco = 0.40;
         } else {
             preco = 0.65;
         }
+
     } else if (tipo == 'C' || tipo == 'c') {
-        if (kWh <= 1000) {
+
+        // Regra para comercial
+        if (consumo <= 1000) {
             preco = 0.55;
         } else {
             preco = 0.60;
         }
+
     } else if (tipo == 'I' || tipo == 'i') {
-        if (kWh <= 5000) {
+
+        // Regra para industrial
+        if (consumo <= 5000) {
             preco = 0.55;
         } else {
             preco = 0.60;
         }
+
     } else {
-        printf("Tipo Invalido!\n");
+        // Caso o tipo digitado seja inválido
+        printf("Tipo invalido!\n");
         return 1;
     }
 
-    total = kWh * preco;
-    printf("Valor total a pagar: R$ %.2f\n", total);
+    // Calcula o valor total
+    total = consumo * preco;
+
+    // Mostra o resultado
+    printf("Valor a pagar: R$ %.2f\n", total);
 
     return 0;
 }
