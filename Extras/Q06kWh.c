@@ -1,55 +1,57 @@
 #include <stdio.h>
 
-int main() {
+int main () {
+
     char tipo;
-    float consumo, preco, total;
-
-    // Entrada de dados
-    printf("Digite o tipo da instalacao (R, C ou I): ");
+    float kWh;
+    float preco;
+    float total;
+    
+    printf("Digite o tipo de Energia (R = Residencial / C = Comercial / I = Industrial): ");
     scanf(" %c", &tipo);
-
-    printf("Digite o consumo em kWh: ");
-    scanf("%f", &consumo);
-
-    // Verifica o tipo de instalacao
+    
+    printf("\nDigite o consumo de kWh: ");
+    scanf(" %f", &kWh);
+    
     if (tipo == 'R' || tipo == 'r') {
-
-        // Regra para residencial
-        if (consumo <= 500) {
-            preco = 0.40;
-        } else {
+        if (kWh <= 500)
+        {
+            preco = 0.40; 
+            }
+        else 
+        {
             preco = 0.65;
         }
-
-    } else if (tipo == 'C' || tipo == 'c') {
-
-        // Regra para comercial
-        if (consumo <= 1000) {
-            preco = 0.55;
-        } else {
+    }
+    else if (tipo == 'C' || tipo == 'c') {
+        if (kWh <= 1000)
+        {
+            preco = 0.55; 
+            }
+        else 
+        {
             preco = 0.60;
         }
-
-    } else if (tipo == 'I' || tipo == 'i') {
-
-        // Regra para industrial
-        if (consumo <= 5000) {
-            preco = 0.55;
-        } else {
+    }
+    else if (tipo == 'I' || tipo == 'i') {
+        if (kWh <= 5000)
+        {
+            preco = 0.55; 
+            }
+        else 
+        {
             preco = 0.60;
         }
-
-    } else {
-        // Caso o tipo digitado seja inválido
-        printf("Tipo invalido!\n");
+    }
+    else {
+        printf("Tipo Invalido!\n");
         return 1;
     }
+    
+    total = kWh * preco;
+    
+    printf("Preco por kWh: R$ %.2f\n", preco);
+    printf("O tatal a pagar sera de: R$%.2f\n", total);
 
-    // Calcula o valor total
-    total = consumo * preco;
-
-    // Mostra o resultado
-    printf("Valor a pagar: R$ %.2f\n", total);
-
-    return 0;
+return 0;
 }
