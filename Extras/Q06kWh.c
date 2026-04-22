@@ -1,66 +1,56 @@
 #include <stdio.h>   // biblioteca para usar printf e scanf
 
-int main()
-{
-    char tipo;        // guarda o tipo: R, C ou I
-    float kWh;        // guarda o consumo de energia
-    float preco = 0;  // guarda o preco por kWh, começa em 0
-    float total;      // guarda o valor total da conta
+int main() {
+    char tipo;
+    float consumo, preco, total;
 
-    printf("Digite o tipo de Energia, (R=Residencial / C=Comercial / I=Industrial): ");
-    scanf(" %c", &tipo);   // lê um caractere e guarda em tipo
+    // Entrada de dados
+    printf("Digite o tipo da instalacao (R, C ou I): ");
+    scanf(" %c", &tipo);
 
-    printf("\nDigite o Consumo de (kWh): ");
-    scanf("%f", &kWh);     // lê o consumo e guarda em kWh
+    printf("Digite o consumo em kWh: ");
+    scanf("%f", &consumo);
 
-    if (tipo == 'R' || tipo == 'r')   // se for residencial
-    {
-        if (kWh <= 500)               // se consumir até 500
-        {
-            preco = 0.40;             // tarifa residencial baixa
-            printf("O preco é igual a %.2f\n", preco);
+    // Verifica o tipo de instalacao
+    if (tipo == 'R' || tipo == 'r') {
+
+        // Regra para residencial
+        if (consumo <= 500) {
+            preco = 0.40;
+        } else {
+            preco = 0.65;
         }
-        else                          // se consumir acima de 500
-        {
-            preco = 0.65;             // tarifa residencial alta
-            printf("O preco é igual a %.2f\n", preco);
-        }
-    }
-    else if (tipo == 'C' || tipo == 'c')  // se for comercial
-    {
-        if (kWh <= 1000)                  // se consumir até 1000
-        {
+
+    } else if (tipo == 'C' || tipo == 'c') {
+
+        // Regra para comercial
+        if (consumo <= 1000) {
             preco = 0.55;
-            printf("O preco é igual a %.2f\n", preco);
-        }
-        else                              // se consumir acima de 1000
-        {
+        } else {
             preco = 0.60;
             printf("O preco é igual a %.2f\n", preco);
         }
-    }
-    else if (tipo == 'I' || tipo == 'i')  // se for industrial
-    {
-        if (kWh <= 5000)                  // se consumir até 5000
-        {
+
+    } else if (tipo == 'I' || tipo == 'i') {
+
+        // Regra para industrial
+        if (consumo <= 5000) {
             preco = 0.55;
-            printf("O preco é igual a %.2f\n", preco);
-        }
-        else                              // se consumir acima de 5000
-        {
+        } else {
             preco = 0.60;
-            printf("O preco é igual a %.2f\n", preco);
         }
+
+    } else {
+        // Caso o tipo digitado seja inválido
+        printf("Tipo invalido!\n");
+        return 1;
     }
-    else
-    {
-        printf("Tipo Invalido!\n");  // se digitou algo diferente de R, C ou I
-        return 1;                    // encerra o programa com erro
-    }
 
-    total = preco * kWh;             // calcula o valor total
+    // Calcula o valor total
+    total = consumo * preco;
 
-    printf("Valor total a pagar é de %.2f", total);  // mostra o total
+    // Mostra o resultado
+    printf("Valor a pagar: R$ %.2f\n", total);
 
-    return 0;   // encerra o programa normalmente
+    return 0;
 }
