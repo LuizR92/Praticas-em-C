@@ -9,7 +9,7 @@ int main() {
     printf("Digite o tipo de Energia (R/C/I): ");
     scanf(" %c", &tipo);
 
-    printf("\nDigite o consumo de (kWh): ");
+    printf("\nDigite o consumo em kWh: ");
     scanf("%f", &kWh);
 
     switch (tipo) {
@@ -42,7 +42,7 @@ int main() {
             return 1;
     }
 
-    printf("O preco do kWh e de R$%.2f\n", preco);
+    printf("O preco do (kWh) e de R$%.2f\n", preco);
 
     total = kWh * preco;
 
