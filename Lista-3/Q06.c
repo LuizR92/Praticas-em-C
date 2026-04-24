@@ -1,6 +1,35 @@
+/* 6. Validação de cupom de desconto
+
+### Contexto
+
+Uma loja virtual só aceita cupom se ele for válido, se o cliente ainda não tiver usado esse benefício e se a compra atingir um valor mínimo.
+
+### Explicação lógica
+
+O aluno deve perceber que a lógica tem **camadas**:
+
+* primeiro: código válido?
+* depois: cliente já usou?
+* depois: valor mínimo foi atingido?
+
+### Entradas
+
+* `codigoValido` (`int`) → 1 sim, 0 não
+* `valorCompra` (`float`)
+* `jaUsouCupom` (`int`) → 1 sim, 0 não
+
+### Regras
+
+* Se `codigoValido == 1`:
+
+  * se `jaUsouCupom == 0` **e** `valorCompra >= 100`, exibir `DESCONTO APLICADO`
+  * senão, exibir `CUPOM INVALIDO PARA USO`
+* Caso contrário, exibir `CUPOM INVALIDO`*/
+
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int codigoValido, jaUsouCupom;
     float valorCompra;
 
@@ -13,18 +42,22 @@ int main() {
     printf("Ja usou cupom? (1/0): ");
     scanf("%d", &jaUsouCupom);
 
-    if (codigoValido == 1) {
-        if (jaUsouCupom == 0 && valorCompra >= 100) {
+    if (codigoValido == 1)
+    {
+        if (jaUsouCupom == 0 && valorCompra >= 100)
+        {
             printf("DESCONTO APLICADO!\n");
         }
-        else {
+        else
+        {
             printf("CUPOM INVALIDO PARA USO!\n");
-        } 
+        }
     }
-    
-    else {
+
+    else
+    {
         printf("CUPOM INVALIDO!\n");
     }
 
-return 0;
+    return 0;
 }
