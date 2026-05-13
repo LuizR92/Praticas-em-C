@@ -11,6 +11,7 @@ for(pos = 0; pos < 8; pos++) {
     scanf("%d", &numeros[pos]);
 }
 printf("\n");
+
 for(pos = 7; pos >= 0; pos--) {
     printf("%dº número %d\n", pos+1, numeros[pos]);
 }
